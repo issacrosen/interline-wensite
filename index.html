@@ -255,10 +255,15 @@
         
         .early-access {
             display: flex;
-            justify-content: center;
-            gap: 10px;
+            flex-direction: column;
             max-width: 600px;
             margin: 0 auto;
+        }
+        
+        .early-access form {
+            display: flex;
+            gap: 10px;
+            width: 100%;
         }
         
         .early-access input {
@@ -268,6 +273,7 @@
             border-radius: 12px;
             font-size: 1rem;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            width: 100%;
         }
         
         .early-access button {
@@ -280,10 +286,34 @@
             cursor: pointer;
             transition: all 0.3s ease;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            white-space: nowrap;
         }
         
         .early-access button:hover {
             background-color: var(--light);
+            transform: translateY(-2px);
+        }
+        
+        #form-message {
+            margin-top: 16px;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 500;
+        }
+        
+        #form-message.success {
+            background-color: rgba(16, 185, 129, 0.1);
+            color: var(--success);
+        }
+        
+        #form-message.error {
+            background-color: rgba(239, 68, 68, 0.1);
+            color: var(--danger);
+        }
+        
+        .hidden {
+            display: none;
         }
         
         /* Footer */
@@ -479,18 +509,19 @@
         </div>
     </section>
 
-<section class="cta-section" id="early-access">
-    <div class="container">
-        <h2>Be Among The First To Experience Interline</h2>
-        <p>Join our exclusive early access program and get a head start on transforming your client communications.</p>
-        <div class="early-access">
-            <form action="https://formspree.io/f/meogedkn" method="POST">
-                <input type="email" name="email" placeholder="Enter your email address" required>
-                <button type="submit">Get Early Access</button>
-            </form>
+    <section class="cta-section" id="early-access">
+        <div class="container">
+            <h2>Be Among The First To Experience Interline</h2>
+            <p>Join our exclusive early access program and get a head start on transforming your client communications.</p>
+            <div class="early-access">
+                <form id="waitlist-form">
+                    <input type="email" name="email" placeholder="Enter your email address" required>
+                    <button type="submit">Get Early Access</button>
+                </form>
+                <div id="form-message" class="hidden"></div>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <footer id="contact">
         <div class="container">
@@ -538,5 +569,74 @@
             </div>
         </div>
     </footer>
+    <!-- Add this script right before the closing body tag -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('waitlist-form');
+            const formMessage = document.getElementById('form-message');
+            
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                // Collect user data
+                const email = form.querySelector('input[name="email"]').value;
+                
+                // Add additional metadata
+                const formData = {
+                    email: email,
+                    source: 'Interline Pre-launch Website',
+                    timestamp: new Date().toISOString(),
+                    browserInfo: navigator.userAgent,
+                    referrer: document.referrer || window.location.href,
+                    screenInfo: `${window.innerWidth}x${window.innerHeight}`,
+                    timezone: Intl.DateTimeFormat().resolvedOptions().timeZone
+                };
+                
+                // Show loading state
+                const submitButton = this.querySelector('button[type="submit"]');
+                const originalButtonText = submitButton.innerHTML;
+                submitButton.disabled = true;
+                submitButton.innerHTML = 'Submitting...';
+                
+                // Send to your external API
+                fetch('https://telnyx-webhook.entpher.io/telnyx/webhook/7a9e8b1f2c3d4e5f6789abcd0123456f/interline-waitlist', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(formData),
+                    redirect: 'follow'
+                })
+                .then(response => {
+                    if (!response.ok) throw new Error('Network response was not ok');
+                    return response.json();
+                })
+                .then(data => {
+                    // Show success message
+                    formMessage.textContent = 'Thank you! You\'ve joined our waitlist.';
+                    formMessage.classList.remove('hidden', 'error');
+                    formMessage.classList.add('success');
+                    form.reset();
+                    
+                    // Optional: redirect to thank you page
+                    // window.location.href = 'thank-you.html';
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    formMessage.textContent = 'There was an error adding you to the waitlist. Please try again.';
+                    formMessage.classList.remove('hidden', 'success');
+                    formMessage.classList.add('error');
+                })
+                .finally(() => {
+                    // Reset button state
+                    setTimeout(() => {
+                        submitButton.disabled = false;
+                        submitButton.innerHTML = originalButtonText;
+                    }, 1000);
+                });
+            });
+        });
+    </script>
 </body>
 </html>

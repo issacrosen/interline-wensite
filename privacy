@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <title>Privacy Policy - Interline</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #1d4ed8;
+            --accent: #38bdf8;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --success: #10b981;
+            --danger: #ef4444;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: white;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .cta-button {
+            background-color: var(--primary);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+        }
+        
+        .cta-button:hover {
+            background-color: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+        }
+        
+        .content {
+            max-width: 800px;
+            margin: 120px auto 60px;
+            padding: 0 20px;
+        }
+        
+        .content h1 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .last-updated {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+        
+        .content h2 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-top: 40px;
+            margin-bottom: 15px;
+        }
+        
+        .content h3 {
+            font-size: 1.2rem;
+            color: var(--dark);
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        
+        .content p {
+            margin-bottom: 15px;
+            color: #4b5563;
+        }
+        
+        .content ul, .content ol {
+            margin-bottom: 15px;
+            padding-left: 30px;
+        }
+        
+        .content li {
+            margin-bottom: 8px;
+            color: #4b5563;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+        .contact-info {
+            background-color: rgba(37, 99, 235, 0.05);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+        
+        .contact-info h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .highlight-box {
+            background-color: rgba(56, 189, 248, 0.1);
+            border-left: 4px solid var(--accent);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <img src="interline.svg" alt="Interline Logo" width="140" height="40">
+                </a>
+                <div class="nav-links">
+                    <a href="index.html#features">Features</a>
+                    <a href="index.html#how-it-works">How It Works</a>
+                    <a href="index.html#contact">Contact</a>
+                </div>
+                <a href="index.html#early-access" class="cta-button">Get Early Access</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="content">
+        <a href="index.html" class="back-link">← Back to Home</a>
+        
+        <h1>Privacy Policy</h1>
+        <p class="last-updated">Last updated: August 26, 2025</p>
+
+        <div class="highlight-box">
+            <p><strong>Your Privacy Matters:</strong> At Interline, we are committed to protecting your privacy and being transparent about how we collect, use, and share your personal information.</p>
+        </div>
+
+        <h2>1. Information We Collect</h2>
+        
+        <h3>1.1 Information You Provide</h3>
+        <p>We collect information you directly provide to us, including:</p>
+        <ul>
+            <li><strong>Account Information:</strong> Name, email address, company name, phone number</li>
+            <li><strong>Profile Information:</strong> Profile pictures, bio, preferences, and settings</li>
+            <li><strong>Communication Content:</strong> Messages, contacts, and communication data processed through our platform</li>
+            <li><strong>Payment Information:</strong> Billing address and payment method details (processed by third-party payment processors)</li>
+            <li><strong>Support Information:</strong> Information provided when contacting customer support</li>
+        </ul>
+
+        <h3>1.2 Information We Collect Automatically</h3>
+        <p>When you use our services, we automatically collect:</p>
+        <ul>
+            <li><strong>Usage Data:</strong> How you interact with our platform, features used, and time spent</li>
+            <li><strong>Device Information:</strong> Device type, operating system, browser type, IP address</li>
+            <li><strong>Log Data:</strong> Server logs, error reports, and performance data</li>
+            <li><strong>Cookies and Tracking:</strong> Information collected through cookies and similar technologies</li>
+        </ul>
+
+        <h3>1.3 Information from Third Parties</h3>
+        <p>We may receive information from:</p>
+        <ul>
+            <li>Third-party integrations (WhatsApp Business API, SMS providers, email services)</li>
+            <li>Analytics providers and advertising partners</li>
+            <li>Public databases and social media platforms</li>
+        </ul>
+
+        <h2>2. How We Use Your Information</h2>
+        
+        <p>We use collected information to:</p>
+        <ul>
+            <li><strong>Provide Services:</strong> Deliver, maintain, and improve our communication platform</li>
+            <li><strong>Account Management:</strong> Create and manage your account, authenticate users</li>
+            <li><strong>Communication:</strong> Process and facilitate your communications across channels</li>
+            <li><strong>Customer Support:</strong> Respond to inquiries and provide technical support</li>
+            <li><strong>Analytics:</strong> Analyze usage patterns and improve our services</li>
+            <li><strong>Marketing:</strong> Send promotional materials and product updates (with consent)</li>
+            <li><strong>Legal Compliance:</strong> Comply with legal obligations and enforce our terms</li>
+        </ul>
+
+        <h2>3. Information Sharing and Disclosure</h2>
+        
+        <h3>3.1 We Share Information With:</h3>
+        <ul>
+            <li><strong>Service Providers:</strong> Third-party vendors who help us operate our business</li>
+            <li><strong>Integration Partners:</strong> WhatsApp, SMS providers, and email services as necessary</li>
+            <li><strong>Payment Processors:</strong> For billing and payment processing</li>
+            <li><strong>Analytics Partners:</strong> For service improvement and analytics</li>
+        </ul>
+
+        <h3>3.2 We May Disclose Information When:</h3>
+        <ul>
+            <li>Required by law or legal process</li>
+            <li>Necessary to protect our rights or safety</li>
+            <li>Part of a business transaction (merger, acquisition, etc.)</li>
+            <li>You provide explicit consent</li>
+        </ul>
+
+        <h3>3.3 We Do Not:</h3>
+        <ul>
+            <li>Sell your personal information to third parties</li>
+            <li>Share your communication content except as necessary to provide our services</li>
+            <li>Use your data for purposes other than those described in this policy without consent</li>
+        </ul>
+
+        <h2>4. Data Security and Protection</h2>
+        
+        <p>We implement robust security measures to protect your information:</p>
+        <ul>
+            <li><strong>Encryption:</strong> Data is encrypted in transit and at rest</li>
+            <li><strong>Access Controls:</strong> Strict access controls and authentication requirements</li>
+            <li><strong>Regular Audits:</strong> Security assessments and vulnerability testing</li>
+            <li><strong>Employee Training:</strong> Staff training on data protection and security practices</li>
+            <li><strong>Incident Response:</strong> Procedures for detecting and responding to security incidents</li>
+        </ul>
+
+        <h2>5. Data Retention</h2>
+        
+        <p>We retain your information for as long as:</p>
+        <ul>
+            <li>Your account is active</li>
+            <li>Necessary to provide our services</li>
+            <li>Required for legal or regulatory compliance</li>
+            <li>Needed for legitimate business purposes</li>
+        </ul>
+
+        <p>You can request deletion of your data by contacting us at privacy@interline.com.</p>
+
+        <h2>6. Your Privacy Rights</h2>
+        
+        <p>Depending on your location, you may have the following rights:</p>
+        <ul>
+            <li><strong>Access:</strong> Request access to your personal information</li>
+            <li><strong>Correction:</strong> Request correction of inaccurate information</li>
+            <li><strong>Deletion:</strong> Request deletion of your personal information</li>
+            <li><strong>Portability:</strong> Request a copy of your data in a portable format</li>
+            <li><strong>Restriction:</strong> Request restriction of processing</li>
+            <li><strong>Objection:</strong> Object to certain types of processing</li>
+            <li><strong>Withdrawal:</strong> Withdraw consent where processing is based on consent</li>
+        </ul>
+
+        <h2>7. International Data Transfers</h2>
+        
+        <p>Your information may be transferred to and processed in countries other than your own. We ensure appropriate safeguards are in place for international transfers, including:</p>
+        <ul>
+            <li>Adequacy decisions</li>
+            <li>Standard contractual clauses</li>
+            <li>Certification schemes</li>
+        </ul>
+
+        <h2>8. Cookies and Tracking Technologies</h2>
+        
+        <p>We use cookies and similar technologies for:</p>
+        <ul>
+            <li>Authentication and security</li>
+            <li>Preferences and settings</li>
+            <li>Analytics and performance</li>
+            <li>Marketing and advertising</li>
+        </ul>
+
+        <p>You can control cookie preferences through your browser settings.</p>
+
+        <h2>9. Third-Party Links and Services</h2>
+        
+        <p>Our service may contain links to third-party websites or integrate with third-party services. This privacy policy does not apply to those third parties. We encourage you to review their privacy policies.</p>
+
+        <h2>10. Children's Privacy</h2>
+        
+        <p>Our services are not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13. If we become aware of such collection, we will delete the information immediately.</p>
+
+        <h2>11. California Privacy Rights (CCPA)</h2>
+        
+        <p>California residents have additional rights under the California Consumer Privacy Act (CCPA), including:</p>
+        <ul>
+            <li>Right to know about personal information collected, used, or shared</li>
+            <li>Right to delete personal information</li>
+            <li>Right to opt-out of the sale of personal information</li>
+            <li>Right to non-discrimination for exercising privacy rights</li>
+        </ul>
+
+        <h2>12. European Privacy Rights (GDPR)</h2>
+        
+        <p>If you are in the European Union, you have rights under the General Data Protection Regulation (GDPR), including those listed in Section 6 above. Our lawful basis for processing includes:</p>
+        <ul>
+            <li>Contract performance</li>
+            <li>Legitimate interests</li>
+            <li>Legal compliance</li>
+            <li>Consent (where applicable)</li>
+        </ul>
+
+        <h2>13. Changes to This Privacy Policy</h2>
+        
+        <p>We may update this privacy policy from time to time to reflect changes in our practices or applicable law. We will notify you of material changes by:</p>
+        <ul>
+            <li>Posting the updated policy on our website</li>
+            <li>Sending email notifications to registered users</li>
+            <li>Providing in-app notifications</li>
+        </ul>
+        
+        <p>Your continued use of our services after the effective date constitutes acceptance of the updated policy.</p>
+
+        <h2>14. Data Processing Addendum</h2>
+        
+        <p>For business customers who use our platform to process personal data of their own customers, we provide a separate Data Processing Addendum (DPA) that governs our role as a data processor. Please contact us for more information about our DPA.</p>
+
+        <h2>15. Contact Information and Data Protection Officer</h2>
+        
+        <div class="contact-info">
+            <h3>Privacy Questions and Requests</h3>
+            <p>If you have questions about this privacy policy or wish to exercise your privacy rights, please contact us:</p>
+            <p>
+                <strong>Email:</strong> privacy@interline.com<br>
+                <strong>Phone:</strong> (718) 289-0018<br>
+                <strong>Mail:</strong> Interline Privacy Team<br>
+                46 Main Street, Suite 146<br>
+                Scotchtown, NY 10941<br>
+                United States
+            </p>
+            
+            <p><strong>Data Protection Officer:</strong> dpo@interline.com</p>
+            
+            <p><strong>EU Representative:</strong> For EU residents, our EU representative can be contacted at eu-privacy@interline.com</p>
+        </div>
+
+        <h2>16. Specific Information for Different Regions</h2>
+        
+        <h3>16.1 United States</h3>
+        <p>For US residents, additional state-specific privacy rights may apply. We comply with applicable state privacy laws including CCPA (California), VCDPA (Virginia), and others.</p>
+        
+        <h3>16.2 Canada</h3>
+        <p>For Canadian residents, we comply with the Personal Information Protection and Electronic Documents Act (PIPEDA) and applicable provincial privacy legislation.</p>
+        
+        <h3>16.3 Other Jurisdictions</h3>
+        <p>We comply with applicable data protection laws in all jurisdictions where we operate or have users.</p>
+
+        <div class="highlight-box">
+            <p><strong>Questions or Concerns?</strong> If you have any questions about this privacy policy or how we handle your personal information, please don't hesitate to contact our privacy team. We're committed to addressing your concerns promptly and transparently.</p>
+        </div>

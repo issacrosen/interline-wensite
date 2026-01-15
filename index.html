@@ -97,11 +97,36 @@
             display: inline-block;
             box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
         }
-        
+
         .cta-button:hover {
             background-color: var(--secondary);
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+        }
+
+        .login-button {
+            background-color: transparent;
+            color: var(--primary);
+            padding: 16px 32px;
+            border: 2px solid var(--primary);
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .login-button:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+            align-items: center;
         }
         
         /* Hero Section */
@@ -383,15 +408,26 @@
                 flex-direction: column;
                 gap: 20px;
             }
-            
+
+            .nav-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .login-button,
+            .cta-button {
+                width: 100%;
+                text-align: center;
+            }
+
             .hero h1 {
                 font-size: 2.5rem;
             }
-            
+
             .early-access {
                 flex-direction: column;
             }
-            
+
             .early-access button {
                 width: 100%;
             }
@@ -410,7 +446,10 @@
                     <a href="#how-it-works">How It Works</a>
                     <a href="#contact">Contact</a>
                 </div>
-                <a href="#early-access" class="cta-button">Get Early Access</a>
+                <div class="nav-buttons">
+                    <a href="https://app.interline.chat/login" class="login-button">Login</a>
+                    <a href="#early-access" class="cta-button">Get Early Access</a>
+                </div>
             </nav>
         </div>
     </header>
